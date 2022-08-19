@@ -19,7 +19,8 @@
     "test": "umi test --coverage",
     "test:all": "node ./tests/run-tests.js",
     "test:component": "umi test ./src/components",
-    "ui": "umi ui"
+    "ui": "umi ui",
+    "prepare": "husky install"
   },
   "husky": {
     "hooks": {
@@ -33,7 +34,7 @@
       "prettier --write",
       "git add"
     ],
-    "**/*.{js,jsx,ts,tsx}": "npm run lint-staged"
+    "**/*.{js,jsx,ts,tsx}": "npm run lint"
   },
   "dependencies": {
     "@ant-design/pro-layout": "^6.5.0",
@@ -60,10 +61,17 @@
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-unicorn": "^43.0.2",
     "husky": "^8.0.1",
-    "lint-staged": "^10.0.7",
+    "lint-staged": "^13.0.3",
     "prettier": "^2.7.1",
     "stylelint": "^14.10.0",
     "typescript": "^4.1.2",
     "yorkie": "^2.0.0"
-  }
+  },
+  "checkFiles": [
+    "src/**/*.js*",
+    "src/**/*.ts*",
+    "src/**/*.less",
+    "config/**/*.js*",
+    "scripts/**/*.js"
+  ]
 }
