@@ -25,10 +25,10 @@
   "lint-staged": {
     "**/*.less": "stylelint --syntax less",
     "**/*.{js,jsx,tsx,ts,less,md,json}": [
-      "prettier --write",
+      "npm run prettier",
       "git add"
     ],
-    "**/*.{js,jsx,ts,tsx}": "npm run lint npm run prettier"
+    "**/*.{js,jsx,ts,tsx}": "npm run lint"
   },
   "dependencies": {
     "@ant-design/pro-layout": "^6.5.0",
