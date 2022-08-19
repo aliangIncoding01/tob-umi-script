@@ -2,7 +2,7 @@ import styles from './index.less'
 
 export default function IndexPage() {
   const calc = (a: number, b: number) => {
-    return a - b
+    return a - b;
   }
   return (
     <div>
