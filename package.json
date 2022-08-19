@@ -33,7 +33,7 @@
       "prettier --write",
       "git add"
     ],
-    "**/*.{js,jsx,ts,tsx}": "npm run lint"
+    "**/*.{js,jsx,ts,tsx}": "npm run lint-staged"
   },
   "dependencies": {
     "@ant-design/pro-layout": "^6.5.0",
