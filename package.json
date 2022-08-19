@@ -23,7 +23,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "npm run prettier",
+      "pre-commit": "npm run lint-staged",
       "commit-msg": "npm --no-install commitlint --edit"
     }
   },
