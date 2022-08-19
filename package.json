@@ -28,7 +28,7 @@
       "prettier --write",
       "git add"
     ],
-    "**/*.{js,jsx,ts,tsx}": "npm run lint"
+    "**/*.{js,jsx,ts,tsx}": "npm run lint npm run prettier"
   },
   "dependencies": {
     "@ant-design/pro-layout": "^6.5.0",
