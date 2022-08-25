@@ -9,12 +9,10 @@
     "prettier": "prettier -c --write \"**/*\"",
     "lint-staged": "lint-staged",
     "lint": "eslint ./src --ext .js,.jsx,.ts,.tsx --cache",
-    "lint:style": "stylelint --fix \"src/**/*.less\" --syntax less",
     "ui": "umi ui",
     "prepare": "husky install"
   },
   "lint-staged": {
-    "**/*.less": "stylelint --syntax less",
     "**/*.{js,jsx,tsx,ts,less,md,json}": "prettier --write",
     "**/*.{js,ts,tsx}": "npm run lint"
   },
