@@ -2,7 +2,7 @@ import React from 'react'
 import styles from './index.less'
 
 const IndexPage = () => {
-  const a = (a, b) => {
+  const a = (a: number, b: number) => {
     return a + b
   }
   return (
