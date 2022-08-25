@@ -1,0 +1,8 @@
+/lambda/
+/scripts
+/config/
+.history
+shipitfile.js
+/mock/
+*.test.js
+typings.d.ts
