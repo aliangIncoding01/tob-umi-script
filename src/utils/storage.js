@@ -5,18 +5,7 @@
  * @Last Modified time: 2022-08-Th 04:11:43
  * @Desc: 对浏览器缓存的简单封装
  *
- * 支持加密
  * 支持数据加密 这里采用 crypto-js 加密 也可使用其他方式
- * 设置 setStorage
- * 获取 getStorage
- * 获取所有key getStorageKeys
- * 根据索引获取key getStorageForIndex
- * 获取localStorage长度 getStorageLength
- * 获取全部 getAllStorage
- * 删除 removeStorage
- * 清空 clearStorage
- * 定义参数 类型 window.localStorage, window.sessionStorage
- *
  */
 
 import CryptoJS from 'crypto-js'
