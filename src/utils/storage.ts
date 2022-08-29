@@ -15,7 +15,7 @@ const SECRET_KEY = CryptoJS.enc.Utf8.parse('3333e6e143439161')
 // 十六位十六进制数作为密钥偏移量
 const SECRET_IV = CryptoJS.enc.Utf8.parse('e3bbe7e3ba84431a')
 // 加密
-const encrypt = (data) => {
+const encrypt = (data: string) => {
   if (typeof data === 'object') {
     try {
       data = JSON.stringify(data)
@@ -34,7 +34,7 @@ const encrypt = (data) => {
   return encrypted.ciphertext.toString()
 }
 // 解密
-const decrypt = (data) => {
+const decrypt = (data: string) => {
   const encryptedHexStr = CryptoJS.enc.Hex.parse(data)
   const str = CryptoJS.enc.Base64.stringify(encryptedHexStr)
   const decrypt = CryptoJS.AES.decrypt(str, SECRET_KEY, {
@@ -47,18 +47,18 @@ const decrypt = (data) => {
   return decryptedStr.toString()
 }
 
-// interface StorageOptions {
-//   type?: string
-//   expire?: number
-//   isEncrypt?: Boolean
-// }
+interface StorageOptions {
+  type?: string
+  expire?: number
+  isEncrypt?: Boolean
+}
 
 export default class CustomStorage {
-  // type: string
-  // expire: number
-  // isEncrypt: Boolean
+  type: string
+  expire: number
+  isEncrypt: Boolean
 
-  constructor({ type = 'localStorage', expire = 0, isEncrypt = false }) {
+  constructor({ type = 'localStorage', expire = 0, isEncrypt = false }: StorageOptions) {
     this.type = type // 本地存储类型 localStorage/sessionStorage
     this.expire = expire // 过期时间 可选 单位：秒
     this.isEncrypt = isEncrypt // 是否加密，可选，开发环境下未方便调试可关闭加密
@@ -69,7 +69,7 @@ export default class CustomStorage {
     return typeof Storage !== 'undefined' ? true : false
   }
 
-  setStorage(key, value) {
+  setStorage(key: string, value: any) {
     if (this.expire && +this.expire < 1) throw new Error('Expire must be a number!')
 
     if (!key) throw new Error('Key is required!')
@@ -93,7 +93,7 @@ export default class CustomStorage {
     window[this.type].setItem(key, encryptString)
   }
 
-  getStorage(key) {
+  getStorage(key: string) {
     if (!key) throw new Error('Key is required!')
 
     if (
@@ -121,7 +121,7 @@ export default class CustomStorage {
   }
 
   // 根据索引获取 key
-  getStorageForIndex(index) {
+  getStorageForIndex(index: number) {
     return window[this.type].key(index)
   }
 
@@ -131,7 +131,7 @@ export default class CustomStorage {
   }
 
   // 删除
-  removeStorage(key) {
+  removeStorage(key: string) {
     if (!key) throw new Error('Key is required!')
     window[this.type].removeItem(key)
   }
