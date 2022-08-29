@@ -7,8 +7,8 @@
  *
  */
 export const catchAwait =
-  (fn) =>
-  async (...args) => {
+  (fn: Function) =>
+  async (...args: any) => {
     try {
       return [null, await fn(args)]
     } catch (e) {
