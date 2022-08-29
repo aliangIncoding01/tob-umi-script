@@ -47,8 +47,18 @@ const decrypt = (data) => {
   return decryptedStr.toString()
 }
 
-export default class customStorage {
-  constructor({ type = 'localStorage', expire, isEncrypt }) {
+// interface StorageOptions {
+//   type?: string
+//   expire?: number
+//   isEncrypt?: Boolean
+// }
+
+export default class CustomStorage {
+  // type: string
+  // expire: number
+  // isEncrypt: Boolean
+
+  constructor({ type = 'localStorage', expire = 0, isEncrypt = false }) {
     this.type = type // 本地存储类型 localStorage/sessionStorage
     this.expire = expire // 过期时间 可选 单位：秒
     this.isEncrypt = isEncrypt // 是否加密，可选，开发环境下未方便调试可关闭加密
